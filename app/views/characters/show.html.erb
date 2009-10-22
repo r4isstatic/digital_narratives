@@ -1,2 +1,13 @@
-<p>This character is called <%=h @character.name %>.</p>
+<p>
+  <b>Name:</b>
+  <%=h @character.name %>
+</p>
 
+<p>
+  <b>Universe:</b>
+  <%=h @character.universe.name %>
+</p>
+
+
+<%= link_to 'Edit', edit_character_path(@character) %> |
+<%= link_to 'Back', characters_path %>

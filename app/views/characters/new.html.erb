@@ -1,5 +1,19 @@
-<form action="/characters/create">
-  Name: <input type="text" name="character[name]" />
-  <input type="submit" value="Save" />
-</form>
+<h1>New character</h1>
 
+<% form_for(@character) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :universe_id %><br />
+	<%= collection_select (:character, :universe_id, Universe.find(:all), :id, :name)%>
+  </p>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', characters_path %>
