@@ -1,0 +1,1 @@
+Universe.create(:name => 'Whoniverse')
